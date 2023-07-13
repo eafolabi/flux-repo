@@ -1,0 +1,11 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: 2-demo-flux
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  ref:
+    branch: 2-demo
+  url: https://github.com/eafolabi/flux-demo.git

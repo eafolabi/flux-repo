@@ -1,0 +1,16 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: 2-demo-kustomize
+  namespace: flux-system
+spec:
+  interval: 10s
+  path: ./manifests
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: 2-demo-flux
+  targetNamespace: 2-demo
+  timeout: 3m0s
+  wait: true
