@@ -14,3 +14,23 @@ spec:
         name: 5-demo-flux
   interval: 10m0s
   targetNamespace: 5-demo
+  values:
+    fullnameOverride: ""
+    image:
+      pullPolicy: Always
+      repository: siddharth67/block-buster-dev:7.5.0
+      tag: ""
+    imagePullSecrets: []
+    labels:
+      app:
+        env: uat
+        name: bb-app
+        version: 7.5.0
+    nameOverride: ""
+    namespace:
+      name: demo-app
+    replicaCount: 1
+    service:
+      port: 80
+      targetPort: 80
+      type: ClusterIP
