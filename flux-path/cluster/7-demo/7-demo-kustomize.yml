@@ -9,7 +9,7 @@ spec:
   - name: infra-db-kustomize
   healthChecks:
   - kind: Deployment
-    name: 7-demo-flux
+    name: block-buster-7-7-0
     namespace: 7-demo
   interval: 10s
   path: ./
