@@ -8,4 +8,6 @@ spec:
   interval: 10m0s
   ref:
     branch: 8-demo
-  url: https://github.com/eafolabi/flux-demo.git
+  secretRef:
+    name: 8-demo-git-auth
+  url: ssh://git@github.com/eafolabi/flux-demo.git
