@@ -11,4 +11,4 @@ spec:
     tag: 0bb2691
   secretRef:
     name: ghcr-auth
-  url: oci:ghcr.io/eafolabi/7-demo-flux
+  url: oci://ghcr.io/eafolabi/7-demo-flux
