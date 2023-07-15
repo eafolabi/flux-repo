@@ -1,0 +1,14 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: 7-demo-oci
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  provider: generic
+  ref:
+    tag: 0bb2691
+  secretRef:
+    name: ghcr-auth
+  url: oci:ghcr.io/eafolabi/7-demo-flux

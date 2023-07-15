@@ -1,0 +1,21 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: 7-demo-kustomize
+  namespace: flux-system
+spec:
+  dependsOn:
+  - name: infra-db-kustomize
+  healthChecks:
+  - kind: Deployment
+    name: 7-demo-flux
+    namespace: 7-demo
+  interval: 10s
+  path: ./
+  prune: true
+  sourceRef:
+    kind: OCIRepository
+    name: 7-demo-oci
+  targetNamespace: 7-demo
+  timeout: 10s
