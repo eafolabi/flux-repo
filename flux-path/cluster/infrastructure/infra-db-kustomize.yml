@@ -12,3 +12,7 @@ spec:
     kind: GitRepository
     name: infra-db-flux
   targetNamespace: database
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg      
