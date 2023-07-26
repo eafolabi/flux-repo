@@ -11,3 +11,9 @@ spec:
   sourceRef:
     kind: OCIRepository
     name: suspend
+  healthChecks:
+    - apiVersion: source.toolkit.fluxcd.io/v1beta2
+      kind: OCIRepository
+      namespace: flux-system 
+      name: oci-suspend
+  timeout: 60s    

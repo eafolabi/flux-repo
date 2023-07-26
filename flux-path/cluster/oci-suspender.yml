@@ -11,4 +11,4 @@ spec:
     tag: d875375
   secretRef:
     name: ghcr-auth
-  url: oci:ghcr.io/eafolabi/suspend
+  url: oci://ghcr.io/eafolabi/suspend
