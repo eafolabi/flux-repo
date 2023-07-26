@@ -1,0 +1,14 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: oci-suspend
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  provider: generic
+  ref:
+    tag: d875375
+  secretRef:
+    name: ghcr-auth
+  url: oci:ghcr.io/eafolabi/suspend
