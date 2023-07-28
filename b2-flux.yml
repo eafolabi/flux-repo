@@ -1,0 +1,13 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: b2-seedling
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  ref:
+    branch: main
+  secretRef:
+    name: b2-auth
+  url: ssh://git@github.com/eafolabi/b2-flux-main.git

@@ -1,0 +1,6 @@
+gunicorn>=20
+kubernetes>=24.2
+prometheus-client>=0.16
+python-dateutil>=2.8
+
+b2-utils

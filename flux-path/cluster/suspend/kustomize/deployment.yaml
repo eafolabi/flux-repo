@@ -1,0 +1,41 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: flux-suspend-checker
+  name: flux-suspend-checker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flux-suspend-checker
+  template:
+    metadata:
+      labels:
+        app: flux-suspend-checker
+        b2.genesiscloud.dev/allow-to-apiserver: 'true'
+        b2.genesiscloud.dev/expose-to-prometheus: 'true'
+    spec:
+      containers:
+        # yamllint disable-line rule:line-length
+      - image: eafolabi/flux-suspender:v1
+        name: flux-suspend-checker
+        imagePullPolicy: IfNotPresent
+        ports: 
+          - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: flux-suspend-checker
+  name: flux-suspend-checker
+spec:
+  ports:
+    - name: http
+      port: 8000
+      protocol: TCP
+      targetPort: 8000
+  selector:
+    app: flux-suspend-checker
