@@ -2,7 +2,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: OCIRepository
 metadata:
-  name: 7-demo-oci
+  name: 7-demo-oci-v2
   namespace: flux-system
 spec:
   interval: 10m0s

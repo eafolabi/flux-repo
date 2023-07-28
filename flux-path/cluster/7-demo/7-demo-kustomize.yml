@@ -2,7 +2,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: 7-demo-kustomize
+  name: 7-demo-kustomize-v2
   namespace: flux-system
 spec:
   dependsOn:
@@ -16,6 +16,6 @@ spec:
   prune: true
   sourceRef:
     kind: OCIRepository
-    name: 7-demo-oci
+    name: 7-demo-oci-v2
   targetNamespace: 7-demo
   timeout: 10s
