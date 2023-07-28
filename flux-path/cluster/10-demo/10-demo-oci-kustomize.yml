@@ -11,7 +11,7 @@ spec:
     tag: d6c285f
   secretRef:
     name: ghcr-auth
-  url: oci:ghcr.io/eafolabi/10-demo-flux
+  url: oci://ghcr.io/eafolabi/10-demo-flux
   verify:
     provider: cosign
     secretRef:
